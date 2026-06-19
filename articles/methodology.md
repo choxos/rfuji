@@ -1,8 +1,8 @@
-# How rfuji works: methodology and architecture
+# How rfair works: methodology and architecture
 
-This vignette describes what rfuji measures and how, in enough detail to
+This vignette describes what rfair measures and how, in enough detail to
 interpret and reproduce its scores. For a quick tour see
-[`vignette("rfuji")`](https://choxos.github.io/rfuji/articles/rfuji.md);
+[`vignette("rfair")`](https://choxos.github.io/rfuji/articles/rfair.md);
 for the reuse/sensitivity extensions see
 [`vignette("beyond-fuji")`](https://choxos.github.io/rfuji/articles/beyond-fuji.md).
 
@@ -19,10 +19,10 @@ implemented an automated assessment service for them. F-UJI is a Python
 web service: you send it a persistent identifier (PID) and it returns
 per-metric scores.
 
-`rfuji` is a **native R reimplementation** of the F-UJI metrics (version
+`rfair` is a **native R reimplementation** of the F-UJI metrics (version
 0.8). It performs the whole assessment in R, with no external server, so
 assessments are scriptable, reproducible, and embeddable in R pipelines.
-The original `rfuji` package (v1) was only an HTTP client for an F-UJI
+The original `rfair` package (v1) was only an HTTP client for an F-UJI
 server; this version (v2) is the engine itself.
 
 ## 2. The assessment pipeline
@@ -58,7 +58,7 @@ runs this pipeline:
        │  get_assessment_summary()
        ▼
     fair_assessment             tidy S3 object (print / summary / as.data.frame /
-                                as_fuji_json / as_rdf)
+                                as_fair_json / as_rdf)
 
 ### Identifier handling
 
@@ -82,7 +82,7 @@ id_parse("https://doi.org/10.5281/zenodo.8347772")[c("preferred_schema", "is_per
 
 ### Harvesting and content negotiation
 
-Different repositories expose metadata in different ways. rfuji asks for
+Different repositories expose metadata in different ways. rfair asks for
 several representations of the same object via HTTP **content
 negotiation** (the `Accept` header) and scrapes the landing page, then
 **merges** everything into a single reference schema (~30 elements:
@@ -100,7 +100,7 @@ logic.
 
 ``` r
 
-rfuji_metric_versions()      # bundled metric versions
+rfair_metric_versions()      # bundled metric versions
 #>  [1] "0.8"                 "0.5"                 "0.5ssv2"            
 #>  [4] "0.5ss"               "0.5env"              "0.7_software"       
 #>  [7] "0.7_software_cessda" "0.6a2a"              "0.4"                
@@ -120,12 +120,12 @@ advanced) when it passes. Metrics use one of two scoring mechanisms:
 
 The criterium engine (`criterium_engine.R`) builds each metric’s result
 from the YAML and lets evaluators mark tests passed;
-[`as_fuji_json()`](https://choxos.github.io/rfuji/reference/as_fuji_json.md)
+[`as_fair_json()`](https://choxos.github.io/rfuji/reference/as_fair_json.md)
 then emits a payload matching the upstream F-UJI `FAIRResults` schema.
 
 ## 3. What each FAIR category measures (v0.8)
 
-|  | metric | what rfuji checks |
+|  | metric | what rfair checks |
 |----|----|----|
 | **F** | F1-01MD | identifier follows a unique scheme (URI/URN/UUID/HASH/PID) |
 |  | F1-02MD | identifier is persistent and registered (resolves) |
@@ -165,7 +165,7 @@ fair_principles("I")[, c("id", "definition")]
 
 ## 4. Software FAIR (FRSM)
 
-For software objects, rfuji also bundles the FRSM (FAIR for Research
+For software objects, rfair also bundles the FRSM (FAIR for Research
 Software) metric set; select it with `metric_version = "0.7_software"`.
 The GitHub harvester inspects the repository file tree for signals (a
 license file, tests, CI workflows, dependency manifests, a registry DOI,
@@ -175,14 +175,14 @@ upstream software-FAIR reference.
 
 ## 5. Fidelity to F-UJI
 
-Because rfuji reimplements an existing scoring engine, it includes a
+Because rfair reimplements an existing scoring engine, it includes a
 non-CRAN conformance harness. `tests/conformance/run.R` runs identifiers
-through both rfuji and a locally run, version-matched F-UJI server and
+through both rfair and a locally run, version-matched F-UJI server and
 compares per-metric earned scores. A manual run on 2026-06-16 against
 F-UJI 4.0.0 (metrics v0.8) measured **94.1% on a Zenodo DOI (16/17
 metrics exact)** and **85.3%** across PANGAEA and Dryad; the consistent
 divergence was the data file-format metric (F-UJI uses Tika content
-detection where rfuji uses an HTTP HEAD). This reference-server
+detection where rfair uses an HTTP HEAD). This reference-server
 comparison is not reproduced by CI yet. A separate harness
 (`tests/conformance/parity.R`) compares the R engine with the browser
 TypeScript engine on registry-derivable metrics after the `webapp`
@@ -190,7 +190,7 @@ branch is checked out alongside the package.
 
 ## 6. Beyond F-UJI
 
-rfuji adds checks that automated FAIR tools usually miss, motivated by
+rfair adds checks that automated FAIR tools usually miss, motivated by
 peer review of a COVID-19 FAIR study: license *reusability* (not just
 presence) with the (Re)usable Data Project taxonomy,
 controlled-access/sensitive-data flagging, identifier hygiene, and the

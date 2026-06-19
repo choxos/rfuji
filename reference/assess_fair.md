@@ -28,7 +28,7 @@ assess_fair(
 - metric_version:
 
   Metric version to use (see
-  [`rfuji_metric_versions()`](https://choxos.github.io/rfuji/reference/rfuji_metric_versions.md)).
+  [`rfair_metric_versions()`](https://choxos.github.io/rfuji/reference/rfair_metric_versions.md)).
 
 - use_datacite:
 

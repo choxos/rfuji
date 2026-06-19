@@ -4,12 +4,12 @@
 
 - [`assess_fair()`](https://choxos.github.io/rfuji/reference/assess_fair.md)
   : Assess the FAIRness of a research data object.
-- [`as_fuji_json()`](https://choxos.github.io/rfuji/reference/as_fuji_json.md)
+- [`as_fair_json()`](https://choxos.github.io/rfuji/reference/as_fair_json.md)
   : Convert a FAIR assessment to F-UJI-compatible JSON.
 - [`id_parse()`](https://choxos.github.io/rfuji/reference/id_parse.md) :
   Parse a persistent identifier or URL.
-- [`rfuji_metric_versions()`](https://choxos.github.io/rfuji/reference/rfuji_metric_versions.md)
-  : List the metric versions bundled with rfuji.
+- [`rfair_metric_versions()`](https://choxos.github.io/rfuji/reference/rfair_metric_versions.md)
+  : List the metric versions bundled with rfair.
 
 ## Batch assessment and rtransparent
 
@@ -63,5 +63,5 @@
 
 ## App
 
-- [`launch_rfuji()`](https://choxos.github.io/rfuji/reference/launch_rfuji.md)
-  : Launch the rfuji Shiny app
+- [`launch_rfair()`](https://choxos.github.io/rfuji/reference/launch_rfair.md)
+  : Launch the rfair Shiny app

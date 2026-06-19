@@ -4,7 +4,7 @@ Automated FAIR tools have well-documented blind spots. In peer review of
 a COVID-19 FAIR-assessment study, the reviewer (Melissa Haendel) noted
 that such tools reward the *presence* of a license, an identifier, or a
 metadata field without checking whether the data is actually reusable,
-legitimately restricted, or properly identified. `rfuji` adds checks for
+legitimately restricted, or properly identified. `rfair` adds checks for
 exactly these.
 
 ## A license can be present yet not open for reuse

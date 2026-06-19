@@ -5,25 +5,25 @@
 - **Ahmad Sofi-Mahmudi**. Author, maintainer.
   [](https://orcid.org/0000-0001-6829-0823)
 
-- **Steffen Neumann**. Author.  
-  Author of the original rfuji F-UJI API client
+- **Steffen Neumann**. Contributor.  
+  Author of the original rfuji F-UJI API client that rfair grew from
 
 - **PANGAEA**. Copyright holder.  
-  Copyright holder of the F-UJI service whose metrics rfuji reimplements
+  Copyright holder of the F-UJI service whose metrics rfair reimplements
 
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/choxos/rfuji/blob/v2.6.0/inst/CITATION)
+[`inst/CITATION`](https://github.com/choxos/rfuji/blob/v0.1.0/inst/CITATION)
 
-Sofi-Mahmudi A, Neumann S (2026). *rfuji: Native R FAIR Assessment
-Metrics*. R package version 2.3.5, <https://github.com/choxos/rfuji>.
+Sofi-Mahmudi A, Neumann S (2026). *rfair: Native R FAIR Assessment
+Metrics*. R package version 0.1.0, <https://github.com/choxos/rfuji>.
 
     @Manual{,
-      title = {rfuji: Native R FAIR Assessment Metrics},
+      title = {rfair: Native R FAIR Assessment Metrics},
       author = {Ahmad Sofi-Mahmudi and Steffen Neumann},
       year = {2026},
-      version = {2.3.5},
+      version = {0.1.0},
       url = {https://github.com/choxos/rfuji},
-      note = {R package version 2.3.5},
+      note = {R package version 0.1.0},
     }

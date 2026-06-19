@@ -1,6 +1,6 @@
 # Assess the FAIRness of the data and code shared in articles (rtransparent)
 
-Bridges rtransparent and rfuji: takes the data/code identifiers
+Bridges rtransparent and rfair: takes the data/code identifiers
 rtransparent extracts from articles (its `open_data_links` and
 `open_code_links` columns) and scores each against the FAIR metrics.
 Data identifiers are scored with the FsF data metrics and code
@@ -91,8 +91,8 @@ assess_data_code(list(open_data_links = "https://doi.org/10.5281/zenodo.8347772"
 #>   scheme is_persistent                                   resolved_url
 #> 1    doi          TRUE             https://zenodo.org/records/8347772
 #> 2    url         FALSE https://github.com/pangaea-data-publisher/fuji
-#>   fair_percent   F   A      I     R maturity n_pass n_metrics error
-#> 1        88.46 100 100  66.67 83.33      2.5     15        17  <NA>
-#> 2        66.67  55  50 100.00 68.75      2.0     16        17  <NA>
+#>   fair_percent   F   A     I     R maturity n_pass n_metrics error
+#> 1        88.46 100 100 66.67 83.33      2.5     15        17  <NA>
+#> 2         0.00   0   0  0.00  0.00      0.0      0        17  <NA>
 # }
 ```

@@ -35,7 +35,7 @@ The verbose per-test debug log has been stripped to keep the installed
 size small; all elements used by the `print`, `summary`,
 `as.data.frame`,
 [plot](https://choxos.github.io/rfuji/reference/plot.fair_assessment.md),
-[`as_fuji_json()`](https://choxos.github.io/rfuji/reference/as_fuji_json.md),
+[`as_fair_json()`](https://choxos.github.io/rfuji/reference/as_fair_json.md),
 and [`as_rdf()`](https://choxos.github.io/rfuji/reference/as_rdf.md)
 methods are retained.
 

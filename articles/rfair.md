@@ -1,0 +1,88 @@
+# Getting started with rfair
+
+`rfair` assesses how well a research data object satisfies the FAIR
+principles (Findable, Accessible, Interoperable, Reusable), entirely in
+R. It is a native port of the
+[F-UJI](https://github.com/pangaea-data-publisher/fuji) metrics, so it
+needs no external assessment server.
+
+``` r
+
+library(rfair)
+```
+
+## Assessing an object
+
+Pass any DOI, persistent identifier, or URL to
+[`assess_fair()`](https://choxos.github.io/rfuji/reference/assess_fair.md).
+It resolves the identifier, harvests metadata, and scores it against the
+FAIRsFAIR metrics.
+
+``` r
+
+a <- assess_fair("https://doi.org/10.5281/zenodo.8347772")
+a
+```
+
+The returned `fair_assessment` object prints an F/A/I/R summary. The
+numbers come from up to 17 metrics; each is one row of:
+
+``` r
+
+as.data.frame(a)
+```
+
+`summary(a)` gives the per-principle score table, and the *maturity*
+column reports a 0–3 CMMI level (incomplete → advanced).
+
+``` r
+
+summary(a)
+```
+
+## Interpreting beyond the score
+
+Automated FAIR scores have well-known blind spots. `rfair` surfaces
+three:
+
+``` r
+
+# A license being *present* does not mean the data is open for reuse.
+a$reuse                    # per-license: open / restrictive, commercial, derivatives
+
+# Restricted access can be legitimate (e.g. sensitive human data) and should not
+# be read as "not FAIR".
+a$access                   # access level, controlled_access, sensitive
+
+# Identifiers should follow best practices.
+a$identifier_hygiene       # layered / non-persistent identifier warnings
+```
+
+You can call these directly too:
+
+``` r
+
+license_reuse("https://creativecommons.org/licenses/by-nc-nd/4.0/")
+identifier_hygiene("RRID:MGI:5577054")
+fair_principles()          # canonical FAIR principle definitions
+```
+
+## Exporting results
+
+``` r
+
+as_fair_json(a)            # F-UJI-compatible FAIRResults JSON
+as_rdf(a)                  # W3C DQV + schema.org Rating (JSON-LD)
+```
+
+## Interactive use
+
+``` r
+
+launch_rfair()             # Shiny app
+```
+
+A no-install browser version is at
+<https://choxos.github.io/rfuji/app/>; because browsers cannot fetch
+landing pages cross-origin, it scores from registry metadata
+(DataCite/Crossref) only, so some metrics are lower than the R engine.

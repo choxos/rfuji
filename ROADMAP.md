@@ -1,9 +1,9 @@
-# rfuji roadmap
+# rfair roadmap
 
 Native, pure-R reimplementation of the F-UJI FAIR assessment engine,
 plus a Shiny app and a static JS/TS web app. This file tracks everything
 still to do so nothing is forgotten. See
-`~/.claude/plans/i-forked-rfuji-r-deep-backus.md` for the approved plan
+`~/.claude/plans/i-forked-rfair-r-deep-backus.md` for the approved plan
 and design rationale.
 
 Legend: `[x]` done · `[~]` partial · `[ ]` todo
@@ -98,7 +98,7 @@ GitHub harvester: enrich GitHub repos from the REST API (license,
 description, topics, dates) (`collect_github.R`)
 
 **All 17 v0.8 metrics now score.** Fidelity vs real F-UJI on figshare
-DOI: rfuji 14/26 vs F-UJI 12.5/26 (gap = environment-dependent PID
+DOI: rfair 14/26 vs F-UJI 12.5/26 (gap = environment-dependent PID
 resolution)
 
 FRSM software metric version bundled + selectable
@@ -134,9 +134,9 @@ content-type + extension only)
 
 ## Phase 5 — Shiny app `[~]`
 
-`inst/shiny-apps/rfuji/app.R` (bslib `page_sidebar`, value boxes, cards,
+`inst/shiny-apps/rfair/app.R` (bslib `page_sidebar`, value boxes, cards,
 tabs) +
-[`launch_rfuji()`](https://choxos.github.io/rfuji/reference/launch_rfuji.md)
+[`launch_rfair()`](https://choxos.github.io/rfuji/reference/launch_rfair.md)
 
 Input DOI/PID/URL + metric version; FAIR doughnut; per-principle table;
 per-metric DT (pass/fail row colors); debug log
@@ -203,7 +203,7 @@ TS - \[x\] GitHub Actions: `R-CMD-check.yaml` (mac/win/linux + devel),
 `pkgdown.yaml` (gh-pages root, `clean:false`), and the `webapp` branch
 `.github/workflows/deploy.yaml` workflow (`deploy-app`); live site at
 `choxos.github.io/rfuji` + `/app` - \[x\] roxygen links resolve clean;
-README; vignettes (`rfuji`, `methodology`, `beyond-fuji`,
+README; vignettes (`rfair`, `methodology`, `beyond-fuji`,
 `illustrating-fairness`); `fair_assessment` class + `plot` method docs;
 `R CMD build` succeeds
 

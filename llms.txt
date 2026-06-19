@@ -1,8 +1,8 @@
-# rfuji ![FAIR assessment](https://img.shields.io/badge/FAIR-assessment-118AB2)
+# rfair ![FAIR assessment](https://img.shields.io/badge/FAIR-assessment-118AB2)
 
 > Assess the FAIRness of research data objects, natively in R.
 
-`rfuji` is a native R implementation of the
+`rfair` is a native R implementation of the
 [F-UJI](https://github.com/pangaea-data-publisher/fuji) (FAIRsFAIR
 Research Data Object Assessment) metrics. Given a persistent identifier
 or URL it resolves the object, harvests metadata from its landing page
@@ -11,7 +11,7 @@ the FAIRsFAIR metrics ([v0.8](https://doi.org/10.5281/zenodo.15045911)
 by default) for Findability, Accessibility, Interoperability, and
 Reusability.
 
-Unlike the original `rfuji` (an HTTP client for an external F-UJI
+Unlike the original `rfair` (an HTTP client for an external F-UJI
 server), this version performs the **entire assessment in R** — no
 Python, no server.
 
@@ -33,7 +33,7 @@ remotes::install_github("choxos/rfuji")
 
 ``` r
 
-library(rfuji)
+library(rfair)
 
 a <- assess_fair("https://doi.org/10.5281/zenodo.8347772")
 a
@@ -56,12 +56,12 @@ as_rdf(a)             # DQV + schema.org Rating (JSON-LD)
 
 ## Metric versions and F-UJI options
 
-`rfuji` bundles the current F-UJI website choices plus release-specific
+`rfair` bundles the current F-UJI website choices plus release-specific
 legacy metric files from upstream F-UJI:
 
 ``` r
 
-rfuji_metric_versions()
+rfair_metric_versions()
 #> 0.8 0.5 0.5ssv2 0.5ss 0.5env 0.7_software ...
 
 assess_fair(
@@ -125,7 +125,7 @@ parses the `" ; "`-joined link strings on their own.
 
 ``` r
 
-launch_rfuji()   # bslib Shiny app: scores, per-metric report, reuse/access panels
+launch_rfair()   # bslib Shiny app: scores, per-metric report, reuse/access panels
 ```
 
 A browser version (registry-only, no install) is published at
@@ -133,12 +133,12 @@ A browser version (registry-only, no install) is published at
 
 ## HTTP API scaffold
 
-`rfuji` also ships a Plumber scaffold and OpenAPI contract for teams
+`rfair` also ships a Plumber scaffold and OpenAPI contract for teams
 that want to expose the same assessment engine over HTTP:
 
 ``` r
 
-api <- system.file("plumber", "rfuji-api.R", package = "rfuji")
+api <- system.file("plumber", "rfair-api.R", package = "rfair")
 pr <- plumber::pr(api)
 pr$run(port = 8000)
 ```
@@ -147,7 +147,7 @@ The machine-readable API contract is installed at:
 
 ``` r
 
-system.file("openapi", "rfuji-openapi.yaml", package = "rfuji")
+system.file("openapi", "rfair-openapi.yaml", package = "rfair")
 ```
 
 ## How it works
@@ -163,25 +163,27 @@ baked in from the F-UJI sources by the scripts in `data-raw/`.
 ## Citation and metadata
 
 The repository includes `CITATION.cff` and `codemeta.json` so software
-harvesters can find rfuji’s authorship, license, version, dependencies,
+harvesters can find rfair’s authorship, license, version, dependencies,
 repository URL, and upstream F-UJI provenance. A repository-specific
 archived DOI has not yet been minted; once one exists, add it to both
 metadata files before the next release.
 
 ## Acknowledgements
 
-A native R port of
-[F-UJI](https://github.com/pangaea-data-publisher/fuji) (© PANGAEA,
-MIT), itself based on the FAIRsFAIR metrics. License reusability uses
-the [(Re)usable Data Project](https://reusabledata.org) rubric; FAIR
-principle definitions come from the
+`rfair` began as a fork of the
+[rfuji](https://github.com/NFDI4Chem/rfuji) F-UJI API client (Steffen
+Neumann) and reimplements the assessment engine natively in R. It is a
+native R port of [F-UJI](https://github.com/pangaea-data-publisher/fuji)
+(© PANGAEA, MIT), itself based on the FAIRsFAIR metrics. License
+reusability uses the [(Re)usable Data Project](https://reusabledata.org)
+rubric; FAIR principle definitions come from the
 [FAIR-nanopubs](https://peta-pico.github.io/FAIR-nanopubs/principles/index-en.html)
 vocabulary referenced by
 [go-fair.org](https://www.go-fair.org/fair-principles/).
 
 ## License
 
-MIT © rfuji authors. See `LICENSE`.
+MIT © rfair authors. See `LICENSE`.
 
 # Package index
 
@@ -189,12 +191,12 @@ MIT © rfuji authors. See `LICENSE`.
 
 - [`assess_fair()`](https://choxos.github.io/rfuji/reference/assess_fair.md)
   : Assess the FAIRness of a research data object.
-- [`as_fuji_json()`](https://choxos.github.io/rfuji/reference/as_fuji_json.md)
+- [`as_fair_json()`](https://choxos.github.io/rfuji/reference/as_fair_json.md)
   : Convert a FAIR assessment to F-UJI-compatible JSON.
 - [`id_parse()`](https://choxos.github.io/rfuji/reference/id_parse.md) :
   Parse a persistent identifier or URL.
-- [`rfuji_metric_versions()`](https://choxos.github.io/rfuji/reference/rfuji_metric_versions.md)
-  : List the metric versions bundled with rfuji.
+- [`rfair_metric_versions()`](https://choxos.github.io/rfuji/reference/rfair_metric_versions.md)
+  : List the metric versions bundled with rfair.
 
 ## Batch assessment and rtransparent
 
@@ -248,8 +250,8 @@ MIT © rfuji authors. See `LICENSE`.
 
 ## App
 
-- [`launch_rfuji()`](https://choxos.github.io/rfuji/reference/launch_rfuji.md)
-  : Launch the rfuji Shiny app
+- [`launch_rfair()`](https://choxos.github.io/rfuji/reference/launch_rfair.md)
+  : Launch the rfair Shiny app
 
 # Articles
 
@@ -259,7 +261,7 @@ MIT © rfuji authors. See `LICENSE`.
   FAIR-TLC](https://choxos.github.io/rfuji/articles/beyond-fuji.md):
 - [Illustrating and interpreting a FAIR
   assessment](https://choxos.github.io/rfuji/articles/illustrating-fairness.md):
-- [How rfuji works: methodology and
+- [How rfair works: methodology and
   architecture](https://choxos.github.io/rfuji/articles/methodology.md):
 - [Getting started with
-  rfuji](https://choxos.github.io/rfuji/articles/rfuji.md):
+  rfair](https://choxos.github.io/rfuji/articles/rfair.md):

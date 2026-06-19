@@ -21,7 +21,7 @@ assess_fair_batch(ids, metric_version = "0.8", quiet = FALSE, ...)
 - metric_version:
 
   Metric version (see
-  [`rfuji_metric_versions()`](https://choxos.github.io/rfuji/reference/rfuji_metric_versions.md)).
+  [`rfair_metric_versions()`](https://choxos.github.io/rfuji/reference/rfair_metric_versions.md)).
 
 - quiet:
 

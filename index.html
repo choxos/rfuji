@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Assess the FAIRness of Research Data Objects • rfuji</title>
+<title>Assess the FAIRness of Research Data Objects and Software • rfair</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Assess the FAIRness of Research Data Objects">
-<meta name="description" content="A native R implementation of the F-UJI (FAIRsFAIR Research Data Object Assessment) metrics for evaluating how well a research data object satisfies the FAIR principles (Findable, Accessible, Interoperable, Reusable). Given a persistent identifier or URL, rfuji resolves it, harvests metadata from landing pages and registries, and scores it against the FAIRsFAIR metrics (&lt;doi:10.5281/zenodo.3775793&gt;) entirely in R, without requiring an external assessment server.">
-<meta property="og:description" content="A native R implementation of the F-UJI (FAIRsFAIR Research Data Object Assessment) metrics for evaluating how well a research data object satisfies the FAIR principles (Findable, Accessible, Interoperable, Reusable). Given a persistent identifier or URL, rfuji resolves it, harvests metadata from landing pages and registries, and scores it against the FAIRsFAIR metrics (&lt;doi:10.5281/zenodo.3775793&gt;) entirely in R, without requiring an external assessment server.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Assess the FAIRness of Research Data Objects and Software">
+<meta name="description" content="A native R implementation of the F-UJI (FAIRsFAIR Research Data Object Assessment) and FRSM (FAIR for Research Software) metrics for evaluating how well a research data object or piece of research software satisfies the FAIR principles (Findable, Accessible, Interoperable, Reusable). Given a persistent identifier, URL, or code repository, rfair resolves it, harvests metadata from landing pages and registries, and scores it against the FAIRsFAIR metrics (&lt;doi:10.5281/zenodo.3775793&gt;) entirely in R, without requiring an external assessment server. rfair began as a fork of the rfuji F-UJI API client and reimplements the assessment engine natively.">
+<meta property="og:description" content="A native R implementation of the F-UJI (FAIRsFAIR Research Data Object Assessment) and FRSM (FAIR for Research Software) metrics for evaluating how well a research data object or piece of research software satisfies the FAIR principles (Findable, Accessible, Interoperable, Reusable). Given a persistent identifier, URL, or code repository, rfair resolves it, harvests metadata from landing pages and registries, and scores it against the FAIRsFAIR metrics (&lt;doi:10.5281/zenodo.3775793&gt;) entirely in R, without requiring an external assessment server. rfair began as a fork of the rfuji F-UJI API client and reimplements the assessment engine natively.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -20,9 +20,9 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">rfuji</a>
+    <a class="navbar-brand me-2" href="index.html">rfair</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,13 +47,13 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="rfuji-">rfuji <img src="https://img.shields.io/badge/FAIR-assessment-118AB2" alt="FAIR assessment" align="right"><a class="anchor" aria-label="anchor" href="#rfuji-"></a>
+<div class="page-header"><h1 id="rfair-">rfair <img src="https://img.shields.io/badge/FAIR-assessment-118AB2" alt="FAIR assessment" align="right"><a class="anchor" aria-label="anchor" href="#rfair-"></a>
 </h1></div>
 <blockquote>
 <p>Assess the FAIRness of research data objects, natively in R.</p>
 </blockquote>
-<p><code>rfuji</code> is a native R implementation of the <a href="https://github.com/pangaea-data-publisher/fuji" class="external-link">F-UJI</a> (FAIRsFAIR Research Data Object Assessment) metrics. Given a persistent identifier or URL it resolves the object, harvests metadata from its landing page and from registries (DataCite, Crossref, GitHub), and scores it against the FAIRsFAIR metrics (<a href="https://doi.org/10.5281/zenodo.15045911" class="external-link">v0.8</a> by default) for Findability, Accessibility, Interoperability, and Reusability.</p>
-<p>Unlike the original <code>rfuji</code> (an HTTP client for an external F-UJI server), this version performs the <strong>entire assessment in R</strong> — no Python, no server.</p>
+<p><code>rfair</code> is a native R implementation of the <a href="https://github.com/pangaea-data-publisher/fuji" class="external-link">F-UJI</a> (FAIRsFAIR Research Data Object Assessment) metrics. Given a persistent identifier or URL it resolves the object, harvests metadata from its landing page and from registries (DataCite, Crossref, GitHub), and scores it against the FAIRsFAIR metrics (<a href="https://doi.org/10.5281/zenodo.15045911" class="external-link">v0.8</a> by default) for Findability, Accessibility, Interoperability, and Reusability.</p>
+<p>Unlike the original <code>rfair</code> (an HTTP client for an external F-UJI server), this version performs the <strong>entire assessment in R</strong> — no Python, no server.</p>
 <p>It also goes <strong>beyond F-UJI</strong> with checks that automated FAIR tools usually miss (prompted by peer review of a COVID-19 FAIR-assessment study): whether a license actually permits reuse, whether data is controlled-access / sensitive, and whether identifiers follow best practices.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -66,7 +66,7 @@
 <h2 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/choxos/rfuji" class="external-link">rfuji</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/choxos/rfuji" class="external-link">rfair</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/assess_fair.html">assess_fair</a></span><span class="op">(</span><span class="st">"https://doi.org/10.5281/zenodo.8347772"</span><span class="op">)</span></span>
 <span><span class="va">a</span></span>
@@ -83,15 +83,15 @@
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>            <span class="co"># F/A/I/R score table</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>      <span class="co"># one row per metric</span></span>
-<span><span class="fu"><a href="reference/as_fuji_json.html">as_fuji_json</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>       <span class="co"># F-UJI-compatible JSON</span></span>
+<span><span class="fu">as_fuji_json</span><span class="op">(</span><span class="va">a</span><span class="op">)</span>       <span class="co"># F-UJI-compatible JSON</span></span>
 <span><span class="fu"><a href="reference/as_rdf.html">as_rdf</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>             <span class="co"># DQV + schema.org Rating (JSON-LD)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="metric-versions-and-f-uji-options">Metric versions and F-UJI options<a class="anchor" aria-label="anchor" href="#metric-versions-and-f-uji-options"></a>
 </h2>
-<p><code>rfuji</code> bundles the current F-UJI website choices plus release-specific legacy metric files from upstream F-UJI:</p>
+<p><code>rfair</code> bundles the current F-UJI website choices plus release-specific legacy metric files from upstream F-UJI:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/rfuji_metric_versions.html">rfuji_metric_versions</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/rfair_metric_versions.html">rfair_metric_versions</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; 0.8 0.5 0.5ssv2 0.5ss 0.5env 0.7_software ...</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/assess_fair.html">assess_fair</a></span><span class="op">(</span></span>
@@ -136,20 +136,20 @@
 <h2 id="interactive-app">Interactive app<a class="anchor" aria-label="anchor" href="#interactive-app"></a>
 </h2>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/launch_rfuji.html">launch_rfuji</a></span><span class="op">(</span><span class="op">)</span>   <span class="co"># bslib Shiny app: scores, per-metric report, reuse/access panels</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/launch_rfair.html">launch_rfair</a></span><span class="op">(</span><span class="op">)</span>   <span class="co"># bslib Shiny app: scores, per-metric report, reuse/access panels</span></span></code></pre></div>
 <p>A browser version (registry-only, no install) is published at <strong><a href="https://choxos.github.io/rfuji/app/" class="uri">https://choxos.github.io/rfuji/app/</a></strong>.</p>
 </div>
 <div class="section level2">
 <h2 id="http-api-scaffold">HTTP API scaffold<a class="anchor" aria-label="anchor" href="#http-api-scaffold"></a>
 </h2>
-<p><code>rfuji</code> also ships a Plumber scaffold and OpenAPI contract for teams that want to expose the same assessment engine over HTTP:</p>
+<p><code>rfair</code> also ships a Plumber scaffold and OpenAPI contract for teams that want to expose the same assessment engine over HTTP:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">api</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"plumber"</span>, <span class="st">"rfuji-api.R"</span>, package <span class="op">=</span> <span class="st">"rfuji"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">api</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"plumber"</span>, <span class="st">"rfair-api.R"</span>, package <span class="op">=</span> <span class="st">"rfair"</span><span class="op">)</span></span>
 <span><span class="va">pr</span> <span class="op">&lt;-</span> <span class="fu">plumber</span><span class="fu">::</span><span class="fu"><a href="https://www.rplumber.io/reference/pr.html" class="external-link">pr</a></span><span class="op">(</span><span class="va">api</span><span class="op">)</span></span>
 <span><span class="va">pr</span><span class="op">$</span><span class="fu">run</span><span class="op">(</span>port <span class="op">=</span> <span class="fl">8000</span><span class="op">)</span></span></code></pre></div>
 <p>The machine-readable API contract is installed at:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"openapi"</span>, <span class="st">"rfuji-openapi.yaml"</span>, package <span class="op">=</span> <span class="st">"rfuji"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"openapi"</span>, <span class="st">"rfair-openapi.yaml"</span>, package <span class="op">=</span> <span class="st">"rfair"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="how-it-works">How it works<a class="anchor" aria-label="anchor" href="#how-it-works"></a>
@@ -162,17 +162,17 @@ evaluators → F/A/I/R score → fair_assessment</code></pre>
 <div class="section level2">
 <h2 id="citation-and-metadata">Citation and metadata<a class="anchor" aria-label="anchor" href="#citation-and-metadata"></a>
 </h2>
-<p>The repository includes <code>CITATION.cff</code> and <code>codemeta.json</code> so software harvesters can find rfuji’s authorship, license, version, dependencies, repository URL, and upstream F-UJI provenance. A repository-specific archived DOI has not yet been minted; once one exists, add it to both metadata files before the next release.</p>
+<p>The repository includes <code>CITATION.cff</code> and <code>codemeta.json</code> so software harvesters can find rfair’s authorship, license, version, dependencies, repository URL, and upstream F-UJI provenance. A repository-specific archived DOI has not yet been minted; once one exists, add it to both metadata files before the next release.</p>
 </div>
 <div class="section level2">
 <h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
 </h2>
-<p>A native R port of <a href="https://github.com/pangaea-data-publisher/fuji" class="external-link">F-UJI</a> (© PANGAEA, MIT), itself based on the FAIRsFAIR metrics. License reusability uses the <a href="https://reusabledata.org" class="external-link">(Re)usable Data Project</a> rubric; FAIR principle definitions come from the <a href="https://peta-pico.github.io/FAIR-nanopubs/principles/index-en.html" class="external-link">FAIR-nanopubs</a> vocabulary referenced by <a href="https://www.go-fair.org/fair-principles/" class="external-link">go-fair.org</a>.</p>
+<p><code>rfair</code> began as a fork of the <a href="https://github.com/NFDI4Chem/rfuji" class="external-link">rfuji</a> F-UJI API client (Steffen Neumann) and reimplements the assessment engine natively in R. It is a native R port of <a href="https://github.com/pangaea-data-publisher/fuji" class="external-link">F-UJI</a> (© PANGAEA, MIT), itself based on the FAIRsFAIR metrics. License reusability uses the <a href="https://reusabledata.org" class="external-link">(Re)usable Data Project</a> rubric; FAIR principle definitions come from the <a href="https://peta-pico.github.io/FAIR-nanopubs/principles/index-en.html" class="external-link">FAIR-nanopubs</a> vocabulary referenced by <a href="https://www.go-fair.org/fair-principles/" class="external-link">go-fair.org</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
 </h2>
-<p>MIT © rfuji authors. See <code>LICENSE</code>.</p>
+<p>MIT © rfair authors. See <code>LICENSE</code>.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -195,7 +195,7 @@ evaluators → F/A/I/R score → fair_assessment</code></pre>
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing rfuji</a></li>
+<li><a href="authors.html#citation">Citing rfair</a></li>
 </ul>
 </div>
 
@@ -203,7 +203,6 @@ evaluators → F/A/I/R score → fair_assessment</code></pre>
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Ahmad Sofi-Mahmudi <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-6829-0823" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
-<li>Steffen Neumann <br><small class="roles"> Author </small>   </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -215,7 +214,7 @@ evaluators → F/A/I/R score → fair_assessment</code></pre>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Ahmad Sofi-Mahmudi, Steffen Neumann.</p>
+  <p>Developed by Ahmad Sofi-Mahmudi.</p>
 </div>
 
 <div class="pkgdown-footer-right">

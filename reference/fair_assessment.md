@@ -8,7 +8,7 @@ returns an object of class `fair_assessment`. It has
 and
 [as.data.frame()](https://choxos.github.io/rfuji/reference/as.data.frame.fair_assessment.md)
 methods, and can be exported with
-[`as_fuji_json()`](https://choxos.github.io/rfuji/reference/as_fuji_json.md)
+[`as_fair_json()`](https://choxos.github.io/rfuji/reference/as_fair_json.md)
 and [`as_rdf()`](https://choxos.github.io/rfuji/reference/as_rdf.md).
 
 ## Details

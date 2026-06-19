@@ -40,10 +40,10 @@ cat(as_rdf(a))
 #>     "schema": "http://schema.org/",
 #>     "dqv": "http://www.w3.org/ns/dqv#",
 #>     "prov": "http://www.w3.org/ns/prov#",
-#>     "rfuji": "https://github.com/choxos/rfuji#"
+#>     "rfair": "https://github.com/choxos/rfuji#"
 #>   },
 #>   "@type": ["schema:Dataset", "dqv:QualityMetadata", "schema:Rating"],
-#>   "dc:creator": "rfuji",
+#>   "dc:creator": "rfair",
 #>   "dc:title": "FAIR assessment results for https://doi.org/10.5281/zenodo.8347772",
 #>   "dc:source": "https://doi.org/10.5281/zenodo.8347772",
 #>   "schema:ratingValue": 88.46,
@@ -54,8 +54,8 @@ cat(as_rdf(a))
 #>     "@type": "prov:Activity",
 #>     "prov:used": "https://doi.org/10.5281/zenodo.8347772"
 #>   },
-#>   "rfuji:metricVersion": "0.8",
-#>   "rfuji:softwareVersion": "2.6.0",
+#>   "rfair:metricVersion": "0.8",
+#>   "rfair:softwareVersion": "0.1.0",
 #>   "dqv:hasQualityMeasurement": [
 #>     {
 #>       "@type": "dqv:QualityMeasurement",
