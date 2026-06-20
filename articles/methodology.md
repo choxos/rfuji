@@ -58,7 +58,7 @@ runs this pipeline:
        │  get_assessment_summary()
        ▼
     fair_assessment             tidy S3 object (print / summary / as.data.frame /
-                                as_fair_json / as_rdf)
+                                as_fuji_json / as_rdf)
 
 ### Identifier handling
 
@@ -120,7 +120,7 @@ advanced) when it passes. Metrics use one of two scoring mechanisms:
 
 The criterium engine (`criterium_engine.R`) builds each metric’s result
 from the YAML and lets evaluators mark tests passed;
-[`as_fair_json()`](https://choxos.github.io/rfair/reference/as_fair_json.md)
+[`as_fuji_json()`](https://choxos.github.io/rfair/reference/as_fuji_json.md)
 then emits a payload matching the upstream F-UJI `FAIRResults` schema.
 
 ## 3. What each FAIR category measures (v0.8)

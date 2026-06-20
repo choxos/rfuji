@@ -14,7 +14,7 @@ as_fuji_json(x, pretty = TRUE)
 - x:
 
   A
-  [fair_assessment](https://choxos.github.io/rfuji/reference/fair_assessment.md)
+  [fair_assessment](https://choxos.github.io/rfair/reference/fair_assessment.md)
   object.
 
 - pretty:
@@ -41,9 +41,9 @@ cat(as_fuji_json(a))
 #>     "metadata_service_type": "",
 #>     "test_debug": false
 #>   },
-#>   "start_timestamp": "2026-06-18T18:06:13+0000",
-#>   "end_timestamp": "2026-06-18T18:06:19+0000",
-#>   "software_version": "2.6.0",
+#>   "start_timestamp": "2026-06-20T01:17:52+0000",
+#>   "end_timestamp": "2026-06-20T01:17:58+0000",
+#>   "software_version": "0.1.0",
 #>   "metric_version": "0.8",
 #>   "metric_specification": "https://doi.org/10.5281/zenodo.15045911",
 #>   "total_metrics": 17,

@@ -58,10 +58,10 @@
 <div class="page-header"><h1 id="rfair-">rfair <img src="https://img.shields.io/badge/FAIR-assessment-118AB2" alt="FAIR assessment" align="right"><a class="anchor" aria-label="anchor" href="#rfair-"></a>
 </h1></div>
 <blockquote>
-<p>Assess the FAIRness of research data objects, natively in R.</p>
+<p>Assess the FAIRness of research data objects and software, natively in R.</p>
 </blockquote>
 <p><code>rfair</code> is a native R implementation of the <a href="https://github.com/pangaea-data-publisher/fuji" class="external-link">F-UJI</a> (FAIRsFAIR Research Data Object Assessment) metrics. Given a persistent identifier or URL it resolves the object, harvests metadata from its landing page and from registries (DataCite, Crossref, GitHub), and scores it against the FAIRsFAIR metrics (<a href="https://doi.org/10.5281/zenodo.15045911" class="external-link">v0.8</a> by default) for Findability, Accessibility, Interoperability, and Reusability.</p>
-<p>Unlike the original <code>rfair</code> (an HTTP client for an external F-UJI server), this version performs the <strong>entire assessment in R</strong> — no Python, no server.</p>
+<p><code>rfair</code> began as a fork of <a href="https://github.com/NFDI4Chem/rfuji" class="external-link"><code>rfuji</code></a>, an HTTP client for an external F-UJI server; unlike that client it performs the <strong>entire assessment in R</strong> — no Python, no server. It also scores <strong>research software</strong> against the FRSM (FAIR for Research Software) metrics.</p>
 <p>It also goes <strong>beyond F-UJI</strong> with checks that automated FAIR tools usually miss (prompted by peer review of a COVID-19 FAIR-assessment study): whether a license actually permits reuse, whether data is controlled-access / sensitive, and whether identifiers follow best practices.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -91,8 +91,13 @@
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>            <span class="co"># F/A/I/R score table</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>      <span class="co"># one row per metric</span></span>
-<span><span class="fu">as_fuji_json</span><span class="op">(</span><span class="va">a</span><span class="op">)</span>       <span class="co"># F-UJI-compatible JSON</span></span>
-<span><span class="fu"><a href="reference/as_rdf.html">as_rdf</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>             <span class="co"># DQV + schema.org Rating (JSON-LD)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">a</span>, type <span class="op">=</span> <span class="st">"sunburst"</span><span class="op">)</span>   <span class="co"># concentric FAIR sunburst (also "category" / "metric")</span></span>
+<span><span class="fu"><a href="reference/as_fuji_json.html">as_fuji_json</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>       <span class="co"># F-UJI-compatible JSON</span></span>
+<span><span class="fu"><a href="reference/as_rdf.html">as_rdf</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>             <span class="co"># DQV + schema.org Rating (JSON-LD)</span></span>
+<span></span>
+<span><span class="co"># Research software, scored against the FRSM metrics:</span></span>
+<span><span class="va">sw</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/assess_fair.html">assess_fair</a></span><span class="op">(</span><span class="st">"https://github.com/pangaea-data-publisher/fuji"</span>,</span>
+<span>                  metric_version <span class="op">=</span> <span class="st">"0.7_software"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="metric-versions-and-f-uji-options">Metric versions and F-UJI options<a class="anchor" aria-label="anchor" href="#metric-versions-and-f-uji-options"></a>

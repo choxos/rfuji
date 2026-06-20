@@ -61,7 +61,7 @@
       <h1>How rfair works: methodology and architecture</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/choxos/rfair/blob/main/vignettes/methodology.Rmd" class="external-link"><code>vignettes/methodology.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/choxos/rfair/blob/v0.1.0/vignettes/methodology.Rmd" class="external-link"><code>vignettes/methodology.Rmd</code></a></small>
       <div class="d-none name"><code>methodology.Rmd</code></div>
     </div>
 
@@ -122,7 +122,7 @@ scoring                     per-test scores -&gt; per-metric -&gt; F/A/I/R -&gt;
    │  get_assessment_summary()
    ▼
 fair_assessment             tidy S3 object (print / summary / as.data.frame /
-                            as_fair_json / as_rdf)</code></pre>
+                            as_fuji_json / as_rdf)</code></pre>
 <div class="section level3">
 <h3 id="identifier-handling">Identifier handling<a class="anchor" aria-label="anchor" href="#identifier-handling"></a>
 </h3>
@@ -184,7 +184,7 @@ same points (the earned score is capped at the metric total).</li>
 </ul>
 <p>The criterium engine (<code>criterium_engine.R</code>) builds each
 metric’s result from the YAML and lets evaluators mark tests passed;
-<code><a href="../reference/as_fair_json.html">as_fair_json()</a></code> then emits a payload matching the upstream
+<code><a href="../reference/as_fuji_json.html">as_fuji_json()</a></code> then emits a payload matching the upstream
 F-UJI <code>FAIRResults</code> schema.</p>
 </div>
 </div>

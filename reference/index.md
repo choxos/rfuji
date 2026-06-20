@@ -4,7 +4,7 @@
 
 - [`assess_fair()`](https://choxos.github.io/rfair/reference/assess_fair.md)
   : Assess the FAIRness of a research data object.
-- [`as_fair_json()`](https://choxos.github.io/rfair/reference/as_fair_json.md)
+- [`as_fuji_json()`](https://choxos.github.io/rfair/reference/as_fuji_json.md)
   : Convert a FAIR assessment to F-UJI-compatible JSON.
 - [`id_parse()`](https://choxos.github.io/rfair/reference/id_parse.md) :
   Parse a persistent identifier or URL.

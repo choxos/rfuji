@@ -12,18 +12,18 @@ require a running F-UJI server.
 
 The main entry point is
 [`assess_fair()`](https://choxos.github.io/rfair/reference/assess_fair.md).
-See the package vignettes and <https://choxos.github.io/rfuji/> for
+See the package vignettes and <https://choxos.github.io/rfair/> for
 details.
 
 ## See also
 
 Useful links:
 
-- <https://github.com/choxos/rfuji>
+- <https://github.com/choxos/rfair>
 
-- <https://choxos.github.io/rfuji/>
+- <https://choxos.github.io/rfair/>
 
-- Report bugs at <https://github.com/choxos/rfuji/issues>
+- Report bugs at <https://github.com/choxos/rfair/issues>
 
 ## Author
 

@@ -61,7 +61,7 @@
       <h1>Illustrating and interpreting a FAIR assessment</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/choxos/rfair/blob/main/vignettes/illustrating-fairness.Rmd" class="external-link"><code>vignettes/illustrating-fairness.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/choxos/rfair/blob/v0.1.0/vignettes/illustrating-fairness.Rmd" class="external-link"><code>vignettes/illustrating-fairness.Rmd</code></a></small>
       <div class="d-none name"><code>illustrating-fairness.Rmd</code></div>
     </div>
 
@@ -259,10 +259,10 @@ no obvious problems):</p>
 <h2 id="exporting-the-illustration">5. Exporting the illustration<a class="anchor" aria-label="anchor" href="#exporting-the-illustration"></a>
 </h2>
 <p>The assessment serializes for downstream tools.
-<code><a href="../reference/as_fair_json.html">as_fair_json()</a></code> emits a payload matching the upstream F-UJI
+<code><a href="../reference/as_fuji_json.html">as_fuji_json()</a></code> emits a payload matching the upstream F-UJI
 <code>FAIRResults</code> schema:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">js</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/as_fair_json.html">as_fair_json</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">js</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/as_fuji_json.html">as_fuji_json</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/substr.html" class="external-link">substr</a></span><span class="op">(</span><span class="va">js</span>, <span class="fl">1</span>, <span class="fl">220</span><span class="op">)</span></span>
 <span><span class="co">#&gt; {</span></span>
 <span><span class="co">#&gt;   "test_id": "4114fa229002ed3433f77ebd3857888da20b07c6",</span></span>

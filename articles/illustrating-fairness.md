@@ -230,12 +230,12 @@ x$identifier_hygiene[c("scheme", "is_persistent", "hygiene_ok")]
 ## 5. Exporting the illustration
 
 The assessment serializes for downstream tools.
-[`as_fair_json()`](https://choxos.github.io/rfair/reference/as_fair_json.md)
+[`as_fuji_json()`](https://choxos.github.io/rfair/reference/as_fuji_json.md)
 emits a payload matching the upstream F-UJI `FAIRResults` schema:
 
 ``` r
 
-js <- as_fair_json(x)
+js <- as_fuji_json(x)
 substr(js, 1, 220)
 #> {
 #>   "test_id": "4114fa229002ed3433f77ebd3857888da20b07c6",
