@@ -176,9 +176,11 @@ baked in from the F-UJI sources by the scripts in `data-raw/`.
 
 The repository includes `CITATION.cff` and `codemeta.json` so software
 harvesters can find rfair’s authorship, license, version, dependencies,
-repository URL, and upstream F-UJI provenance. A repository-specific
-archived DOI has not yet been minted; once one exists, add it to both
-metadata files before the next release.
+repository URL, and upstream F-UJI provenance. Each release is archived
+on Zenodo with a citable DOI; the concept DOI
+[10.5281/zenodo.20775127](https://doi.org/10.5281/zenodo.20775127)
+always resolves to the latest version. Cite the version you used, or run
+`citation("rfair")`.
 
 ## Acknowledgements
 
