@@ -206,7 +206,10 @@ for the package and its correctness.
 
 ## License
 
-MIT © rfair authors. See `LICENSE`.
+GPL-3. See <https://www.gnu.org/licenses/gpl-3.0> for the full license
+text. rfair bundles reference data from external projects under their
+own (MIT, CC0-1.0, CC-BY-4.0) licenses; see `LICENSE.note` for the
+provenance and terms.
 
 # Package index
 
