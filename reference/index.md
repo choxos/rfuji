@@ -54,6 +54,8 @@
   : Check an identifier against best-practice / hygiene heuristics.
 - [`fair_principles()`](https://choxos.github.io/rfair/reference/fair_principles.md)
   : The canonical FAIR (sub)principles.
+- [`fair4rs_principles()`](https://choxos.github.io/rfair/reference/fair4rs_principles.md)
+  : The FAIR Principles for Research Software (FAIR4RS).
 - [`principle_definition()`](https://choxos.github.io/rfair/reference/principle_definition.md)
   : Canonical definition of the FAIR principle a metric maps to.
 - [`fair_tlc()`](https://choxos.github.io/rfair/reference/fair_tlc.md) :

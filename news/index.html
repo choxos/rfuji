@@ -47,7 +47,7 @@
 <code><a href="../reference/assess_fair.html">assess_fair()</a></code> resolves a DOI, persistent identifier, URL, or code repository, harvests its metadata, and scores it against the FAIR metrics, returning a <code>fair_assessment</code> object.</li>
 <li>Multiple metric sets, listed by <code><a href="../reference/rfair_metric_versions.html">rfair_metric_versions()</a></code>: the current F-UJI data metrics (v0.8) by default, several legacy and domain-specific versions (0.2-0.8, plus social-science and environmental variants), and the FRSM research-software metrics (0.7).</li>
 <li>Metadata harvesting from registries (DataCite, Crossref, GitHub), landing-page embedded metadata (schema.org JSON-LD, Dublin Core, OpenGraph, Highwire), signposting and typed links, content-negotiated XML (DataCite XML, MODS, EML, ISO 19139) and RDF / JSON-LD, and optional user-supplied metadata-service endpoints (OAI-PMH, OGC CSW, SPARQL, DCAT, schema.org, RO-Crate, CKAN).</li>
-<li>Software FAIR: pass a GitHub repository with <code>metric_version = "0.7_software"</code> to score it against the FRSM metrics from its repository signals (license, README, citation/codemeta, tests, CI, dependencies, coverage, releases, contributors).</li>
+<li>Software FAIR: pass a GitHub repository with <code>metric_version = "0.7_software"</code> to score it against the FRSM metrics from its repository signals (license, README, citation/codemeta, tests, CI, dependencies, coverage, releases, contributors). The FRSM metrics operationalize the FAIR Principles for Research Software (FAIR4RS; Chue Hong et al. 2022, <a href="doi:10.15497/RDA00068" class="uri">doi:10.15497/RDA00068</a>).</li>
 <li>
 <code><a href="../reference/id_parse.html">id_parse()</a></code> recognizes DOI, Handle, ARK, URN, UUID, identifiers.org / w3id, and compact <code>prefix:accession</code> identifiers.</li>
 </ul></div>
@@ -69,7 +69,7 @@
 <li>
 <code><a href="../reference/fair_tlc.html">fair_tlc()</a></code> reports the FAIR-TLC (Traceable, Licensed, Connected) indicators.</li>
 <li>
-<code><a href="../reference/fair_principles.html">fair_principles()</a></code> and <code><a href="../reference/principle_definition.html">principle_definition()</a></code> provide the canonical FAIR principle definitions.</li>
+<code><a href="../reference/fair_principles.html">fair_principles()</a></code> and <code><a href="../reference/principle_definition.html">principle_definition()</a></code> provide the canonical FAIR principle definitions; <code><a href="../reference/fair4rs_principles.html">fair4rs_principles()</a></code> provides the FAIR4RS principles for research software, and <code><a href="../reference/principle_definition.html">principle_definition()</a></code> resolves FRSM software metrics to their FAIR4RS statement.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="batch-assessment-and-rtransparent-0-1-0">Batch assessment and rtransparent<a class="anchor" aria-label="anchor" href="#batch-assessment-and-rtransparent-0-1-0"></a></h3>

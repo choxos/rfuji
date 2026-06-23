@@ -27,7 +27,9 @@ no external server.
 - Software FAIR: pass a GitHub repository with
   `metric_version = "0.7_software"` to score it against the FRSM metrics
   from its repository signals (license, README, citation/codemeta,
-  tests, CI, dependencies, coverage, releases, contributors).
+  tests, CI, dependencies, coverage, releases, contributors). The FRSM
+  metrics operationalize the FAIR Principles for Research Software
+  (FAIR4RS; Chue Hong et al. 2022, <doi:10.15497/RDA00068>).
 - [`id_parse()`](https://choxos.github.io/rfair/reference/id_parse.md)
   recognizes DOI, Handle, ARK, URN, UUID, identifiers.org / w3id, and
   compact `prefix:accession` identifiers.
@@ -67,7 +69,11 @@ no external server.
 - [`fair_principles()`](https://choxos.github.io/rfair/reference/fair_principles.md)
   and
   [`principle_definition()`](https://choxos.github.io/rfair/reference/principle_definition.md)
-  provide the canonical FAIR principle definitions.
+  provide the canonical FAIR principle definitions;
+  [`fair4rs_principles()`](https://choxos.github.io/rfair/reference/fair4rs_principles.md)
+  provides the FAIR4RS principles for research software, and
+  [`principle_definition()`](https://choxos.github.io/rfair/reference/principle_definition.md)
+  resolves FRSM software metrics to their FAIR4RS statement.
 
 ### Batch assessment and rtransparent
 
