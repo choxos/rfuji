@@ -69,7 +69,7 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">load_all</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Run the package test suite with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">test_local</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">testthat</span><span class="fu">::</span><span class="fu">test_local</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>For a CRAN-style local check, build a clean source tarball and run:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">R</span> CMD build .</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">R</span> CMD check <span class="at">--as-cran</span> rfair_<span class="pp">*</span>.tar.gz</span></code></pre></div>

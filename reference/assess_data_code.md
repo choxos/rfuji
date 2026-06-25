@@ -79,8 +79,6 @@ Each unique identifier is assessed once.
 
 ``` r
 # \donttest{
-# rt <- rtransparent::rt_data_code_pmc(xml)
-# assess_data_code(rt, id_col = "pmid")
 assess_data_code(list(open_data_links = "https://doi.org/10.5281/zenodo.8347772",
                       open_code_links = "https://github.com/pangaea-data-publisher/fuji"))
 #> [1/2] assessing https://doi.org/10.5281/zenodo.8347772 (v0.8)

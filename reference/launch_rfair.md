@@ -14,8 +14,7 @@ launch_rfair(...)
 
 - ...:
 
-  Passed to
-  [`shiny::runApp()`](https://rdrr.io/pkg/shiny/man/runApp.html).
+  Passed to `shiny::runApp()`.
 
 ## Value
 
@@ -24,7 +23,7 @@ Runs the app (called for its side effect); invisibly `NULL`.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
-launch_rfair()
-} # }
+if (interactive()) {
+  launch_rfair()
+}
 ```
